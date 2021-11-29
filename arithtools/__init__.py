@@ -60,4 +60,53 @@ def automorphic(number) -> bool:
     return True if str(number) in square else False
 
 
-print(automorphic(25))
+def peterson(number) -> bool:
+    """
+        Takes a number as input and check whether a given number is Peterson or not.
+    """
+    n, sum = number, 0
+    while number > 0:
+        d = number % 10
+        f = d
+        for i in range(1, d):
+            f *= i
+        sum += f
+        number //= 10
+    if(sum == n):
+        return True
+    else:
+        return False
+
+
+def sunny(number) -> bool:
+    """
+        Takes a number as input and checks whether the given number is Sunny Number or not.
+    """
+    number += 1
+    return True if(number**(1/2) == int(number**(1/2))) else False
+
+
+def tech(number) -> bool:
+    """
+        Takes a number as input and checks whether the given number is Tech Number or not.
+    """
+    if(len(str(number)) % 2 != 0):
+        return False
+    else:
+        return True if(((number % 100)+(number//100))**2 == number) else False
+
+
+def fascinating(number) -> bool:
+    """
+        Takes a number as input and checks whether the given number is Fascinating Number or not.
+    """
+    number = str(number) + str(number*2) + str(number*3)
+    f = 0
+    for i in range(1, 10):
+        if(str(i) not in number or number.count(str(i)) > 1):
+            f = 1
+            break
+    return True if(f == 0) else False
+
+
+print(fascinating(2018))
