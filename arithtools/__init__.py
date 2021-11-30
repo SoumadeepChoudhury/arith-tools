@@ -109,4 +109,35 @@ def fascinating(number) -> bool:
     return True if(f == 0) else False
 
 
-print(fascinating(2018))
+def Keith(number) -> bool:
+    """
+        Takes a number as input and checks whether the given number is Keith or repfigit Number or not.
+    """
+    n = number
+    terms = []
+    while number > 0:
+        terms.append(number % 10)
+        number //= 10
+    terms = terms[::-1]
+    length = len(terms)
+    while True:
+        sum = 0
+        for i in range(1, length+1):
+            sum += terms[len(terms)-i]
+        terms.append(sum)
+        if(terms[-1] == n):
+            return True
+        elif(terms[-1] > n):
+            return False
+        else:
+            continue
+
+
+def repfigit(number) -> bool:
+    """
+        Takes a number as input and checks whether the given number is Keith or repfigit Number or not.
+    """
+    Keith(number)
+
+
+print(Keith(1536))
