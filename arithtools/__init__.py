@@ -109,7 +109,7 @@ def fascinating(number) -> bool:
     return True if(f == 0) else False
 
 
-def Keith(number) -> bool:
+def keith(number) -> bool:
     """
         Takes a number as input and checks whether the given number is Keith or repfigit Number or not.
     """
@@ -137,7 +137,32 @@ def repfigit(number) -> bool:
     """
         Takes a number as input and checks whether the given number is Keith or repfigit Number or not.
     """
-    Keith(number)
+    keith(number)
 
 
-print(Keith(1536))
+def neon(number) -> bool:
+    """
+        Takes a number as input and checks whether the given number is Neon Number or not.
+    """
+    square, sum = number**2, 0
+    while square > 0:
+        d = square % 10
+        sum += d
+        square //= 10
+    return True if(sum == number) else False
+
+
+def spy(number) -> bool:
+    """
+        Takes a number as input and checks whether the given number is Spy Number or not.
+    """
+    sum, prod = 0, 1
+    while number > 0:
+        d = number % 10
+        sum += d
+        prod *= d
+        number //= 10
+    return True if(sum == prod) else False
+
+
+print(spy(123))
