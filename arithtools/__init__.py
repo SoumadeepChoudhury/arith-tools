@@ -165,4 +165,25 @@ def spy(number) -> bool:
     return True if(sum == prod) else False
 
 
-print(spy(123))
+def atm():
+    """In the ATM program, the user has to select an option from the options displayed on the screen. The options are related to withdraw the money, deposit the money, check the balance, and exit."""
+    balance = 10000
+    print("..........WELCOME TO OUR ATM.........\n1. Withdraw Money \n2. Deposit Money\n3. Check Balance\n4. Exit\n")
+    while True:
+        userChoice = int(input("Enter Your Choice: "))
+        if(userChoice == 1):
+            amt = float(input("Enter the Amount you wanna withdraw...."))
+            balance -= amt
+            print("Successfully Withdrawn...Take the Cash...")
+        elif(userChoice == 2):
+            amt = float(input("Enter the Amount you wanna Deposit...."))
+            balance += amt
+            print("Successfully Deposited.....")
+        elif(userChoice == 3):
+            print(f"Your current account balance is {balance}")
+        else:
+            break
+    return "Thanks For Visiting...."
+
+
+print(atm())
