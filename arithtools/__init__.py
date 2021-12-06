@@ -186,4 +186,25 @@ def atm():
     return "Thanks For Visiting...."
 
 
-print(atm())
+def emirp(number) -> bool:
+    """Takes a number as input and checks if the given number is emirp or not."""
+    c = 1
+    for i in range(1, number):
+        if(number % i == 0):
+            c += 1
+    if(c <= 2):
+        n = 0
+        while number > 0:
+            d = number % 10
+            n = n*10+d
+            number //= 10
+        c = 1
+        for i in range(1, n):
+            if(n % i == 0):
+                c += 1
+        return True if(c <= 2) else False
+    else:
+        return False
+
+
+print(emirp(41))
