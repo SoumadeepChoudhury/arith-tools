@@ -42,6 +42,7 @@ setup(
         'pip',
         'pip3',
         'fibonacci',
-        'armstrong'
+        'armstrong',
+        'boiled-egg'
     ],
 )

@@ -226,6 +226,3 @@ def boiled_egg(number) -> str:
         else:
             print(li[t - 7*z])
             z += 1
-
-
-boiled_egg(41)
