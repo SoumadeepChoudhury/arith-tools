@@ -68,7 +68,7 @@ print(arithtools.reverse(num))
 <br><br>
 
 ## Versioning
-`arith-tools` version follows PEP 440 format.
+`arith-tools` version follows [PEP 440](https://www.python.org/dev/peps/pep-0440/) format.
 
 
 <br><br>
