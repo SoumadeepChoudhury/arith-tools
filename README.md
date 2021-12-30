@@ -11,7 +11,7 @@ Goals of the project:
 <br><br>
 
 ## How to install ?
-<i>NOTE: It is recommended to set up a virtual environment.</i>
+<i>NOTE: It is recommended to set up a [virtual environment](https://pypi.org/project/virtualenv/).</i>
 
 In order to install this module, you need to follow the command given below.
 ```bash
@@ -22,8 +22,8 @@ python -m pip install arith-tools
 
 ### VSCode
 
-- Install Python extension
-- Install Pylance extension
+- Install [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+- Install [Pylance extension](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance)
 - Set `Pylance` as your Python Language Server
 - Install `arith-tools` in your environment: `python -m pip install arith-tools`
 
