@@ -226,3 +226,20 @@ def boiled_egg(number) -> str:
         else:
             print(li[t - 7*z])
             z += 1
+        
+def auto_biographical(n):
+    """DESCRIPTION:::::::::An autobiographical number is a number N such that the first digit of N counts how many zeroes are in N,
+    the second digit counts how many ones are in N and so on. In our example, 1210 has 1 zero, 2 ones, 1 two and 0 threes."""
+    sum=0
+    ct=0
+    while(n!=0):
+        r=n%10
+        ct+=1
+        sum+=r
+        n=n//10
+    if(sum==ct):
+        print("Auto-Biographical number") 
+    else:
+        print("Not an Auto-Biographical number") 
+n=int(input("Enter the number"))
+auto_biographical(n)
