@@ -227,9 +227,8 @@ def boiled_egg(number) -> str:
             print(li[t - 7*z])
             z += 1
         
-def auto_biographical(number):
-    """DESCRIPTION:::::::::An autobiographical number is a number N such that the first digit of N counts how many zeroes are in N,
-    the second digit counts how many ones are in N and so on. In our example, 1210 has 1 zero, 2 ones, 1 two and 0 threes."""
+def auto_biographical(number) -> bool:
+    """Check whether the entered number is auto_biographical number or not."""
     n=number
     sum=0
     ct=0
@@ -239,10 +238,13 @@ def auto_biographical(number):
         sum+=r
         n=n//10
     if(sum==ct):
-        print("Auto-Biographical number") 
+        return True
     else:
-        print("Not an Auto-Biographical number") 
+        return False
+
+  
 def pascal_triangle(number):
+    """User will enter the row and it will print the pascal's triangle along with space."""
     for i in range(0,number):
         for k in range(number,i,-1):
             print(end=' ')
@@ -254,7 +256,8 @@ def pascal_triangle(number):
 
 
 
-def two_digit_special(number):
+def two_digit_special(number) -> bool:
+    """It will check whether the entered number is a two digit special number or not."""
     s=0
     n=number
     p=1
@@ -266,14 +269,15 @@ def two_digit_special(number):
             s=s+r
             n=n//10
         if(s+p==a):
-            print(a,"is a 2-digit special number")
+            return True
         else:
-            print(a,"is not a 2-digit special number")
+            return False
     else:
-        print(a,"is not a 2-digit special number")
+        return False
 
 
-def krishnamurti(number):
+def krishnamurti(number) -> bool:
+    """It will check whether the entered number is a krishnamurti number or not."""
     s=0
     n=number
     a=n
@@ -285,13 +289,13 @@ def krishnamurti(number):
         s=s+f
         n=n//10
     if(s==a):
-        print(a,"is a KRISHNAMURTI NUMBER")
+        return True
     else:
-        print(a,"is not a KRISHNAMURTI NUMBER")
+        return False
 
 
-def pronic(number):
-    # pronic number is also called heteromecic number
+def pronic(number) -> bool:
+    """It will check whether the entered number is a pronic number."""
     flag=0
     n=number
     for i in range(0,n):
@@ -299,12 +303,13 @@ def pronic(number):
             flag=1
             break
     if(flag==1):
-        print(n,"is a PRONIC/HETEROMECIC NUMBER")
+        return True
     else:
-        print(n,"is not a PRONIC/HETEROMECIC NUMBER")
+        return False
 
 
-def darsium(number):
+def darsium(number) -> bool:
+    """It will check whether the entered number is a darsium number or not."""
     s=0
     n=number
     c=0
@@ -319,18 +324,19 @@ def darsium(number):
         c=c-1
         n=n//10
     if(s==x):
-        print("DARSIUM NUMBER")
+        return True
     else:
-        print("NOT A DARSIUM NUMBER")
+        return False
 
 
-def happy(number):
+def happy(number) -> bool:
+    """It will check whther the entered number is a happy one or not"""
     p=0
     n=number
     if(n>0 and n<10):
-        print("NOT A HAPPY NUMBER")
+        return False
     else:
-        while(1):
+        while True:
             s=0
             while(n!=0):
                 r=n%10
@@ -342,9 +348,9 @@ def happy(number):
             else:
                 n=s
         if(p==1):
-            print("HAPPY NUMBER")
+            return True
         else:
-            print("NOT A HAPPY NUMBER")
+            return False
 
 
             
