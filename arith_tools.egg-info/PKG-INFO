@@ -1,10 +1,12 @@
 Metadata-Version: 2.1
 Name: arith-tools
-Version: 1.1.0
+Version: 1.1.1
 Summary: Use all the simple arithmetic calculations such as fibonacci series, armstrong number etc.
 Home-page: https://github.com/SoumadeepChoudhury/arith-tools
 Author: Ahens | An Initiative to Initial (Soumadeep Choudhury)
 Author-email: ahensinitiative@gmail.com
+Maintainer: Manmay Chakraborty
+Maintainer-email: manmaychakarborty@gmail.com
 License: MIT
 Keywords: python,arithmetic,tools,arith-tools,arithmetic operations,Math,python3,pip,pip3,fibonacci,armstrong,boiled-egg
 Platform: UNKNOWN
