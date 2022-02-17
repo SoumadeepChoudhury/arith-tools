@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="arith-tools",
-    version="1.1.1",
+    version="1.1.2",
     description="Use all the simple arithmetic calculations such as fibonacci series, armstrong number etc.",
     long_description=README,
     long_description_content_type="text/markdown",

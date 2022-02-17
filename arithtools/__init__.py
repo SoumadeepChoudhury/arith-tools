@@ -231,18 +231,13 @@ def boiled_egg(number) -> str:
 
 def auto_biographical(number) -> bool:
     """Check whether the entered number is auto_biographical number or not."""
-    n = number
-    sum = 0
-    ct = 0
-    while(n != 0):
-        r = n % 10
-        ct += 1
-        sum += r
-        n = n//10
-    if(sum == ct):
-        return True
-    else:
+    number = str(number)
+    if len(number) > 9:
         return False
+    for i in range(len(number)):
+        if(number.count(str(i)) != int(number[i])):
+            return False
+    return True
 
 
 def pascal_triangle(number):
