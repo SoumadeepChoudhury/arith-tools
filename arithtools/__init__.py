@@ -1,4 +1,7 @@
 
+import math
+
+
 def fibonacci_series(range, num1=0, num2=1) -> int:
     """
         Takes <range> from user and default parameter value is 0 and 1 and prints the fibonacci series in order.
@@ -347,3 +350,127 @@ def happy(number) -> bool:
             return True
         else:
             return False
+
+
+def unique(n) -> bool:
+    """Checks whether the given number is Unique or not..."""
+    if(n == 0):
+        return False
+    f = 0
+    for i in range(0, 10):
+        cp = n
+        ct = 0
+        while(cp != 0):
+            r = cp % 10
+            if(r == i):
+                ct += 1
+            cp = cp//10
+        if(ct > 1):
+            f = 1
+            return False
+    if(f == 0):
+        return True
+
+
+def strong(n) -> bool:
+    """Checks whether the given number is Strong Number or not."""
+    sum = 0
+    temp = n
+    while(n):
+        i = 1
+        f = 1
+        r = n % 10
+        while(i <= r):
+            f = f*i
+            i = i+1
+        sum = sum+f
+        n = n//10
+    if(sum == temp):
+        return True
+    else:
+        return False
+
+
+def amicable(userInput1, userInput2) -> bool:
+    """Checks whether the given pair of numbers is amicable or not..."""
+    s1 = 0
+    s2 = 0
+    for i in range(1, userInput1):
+        if(userInput1 % i == 0):
+            s1 += i
+    for j in range(1, userInput2):
+        if(userInput2 % j == 0):
+            s2 += j
+    if(s1 == userInput2 and s2 == userInput1):
+        return True
+    else:
+        return False
+
+
+def Nearest_Prime(n, dist=1) -> int:
+    """Returns the nearest prime of a given input.For certain cases two values could be at near,to find the nearest prime from 0 to that number give ```dist=1``` otherwise ```dist=2```.."""
+    a = n
+    m = n
+    while(1):
+        ct = 0
+        a = a+1
+        for i in range(1, a+1):
+            if(a % i == 0):
+                ct += 1
+        if(ct == 2):
+            break
+    while(1):
+        ct = 0
+        m = m-1
+        for j in range(1, m+1):
+            if(m % j == 0):
+                ct += 1
+        if(ct == 2):
+            break
+    if((a-n) < (n-m)):
+        return a
+    elif((n-m) < (a-n)):
+        return m
+    else:
+        if dist == 1:
+            return m
+        elif dist == 2:
+            return a
+
+
+def equilateral_triangle(n):
+    """Print a equilateral triangle with * for ```(n+1)//2``` number of rows"""
+    for i in range(1, n+1, 2):
+        print(" "*n, "*"*i, " "*n)
+        n = n-1
+
+
+def terrace(userNum1, userNum2) -> bool:
+    """Check whether the input number is Terrace or not..."""
+    temp1, temp2 = userNum1, userNum2
+    gcd = math.gcd(temp1, temp2)
+    li = [2, 3, 5, 7, 11, 13, 17, 19]
+    i = 0
+    while True:
+        if(userNum1 % li[i] == 0 and userNum2 % li[i] == 0):
+            userNum1, userNum2 = userNum1//li[i], userNum2//li[i]
+            i = 0
+            lis1 = list(str(userNum1))
+            lis2 = list(str(userNum2))
+            z, k = 0, 0
+            if len(lis1) == len(lis2):
+                for z in lis1:
+                    if(z in lis2):
+                        k += 1
+                for z in lis2:
+                    if(z in lis2):
+                        k += 1
+                if(k == len(lis1)*2):
+                    if(temp1//gcd == temp2//gcd - 1 or temp1//gcd == temp2//gcd+1):
+                        return True
+                    else:
+                        return False
+        elif(userNum1 < 1 or userNum2 < 1 or i == len(li)-1):
+            return False
+        else:
+            i += 1
