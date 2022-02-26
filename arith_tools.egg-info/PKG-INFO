@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: arith-tools
-Version: 1.1.2
+Version: 1.2.0
 Summary: Use all the simple arithmetic calculations such as fibonacci series, armstrong number etc.
 Home-page: https://github.com/SoumadeepChoudhury/arith-tools
 Author: Ahens | An Initiative to Initial (Soumadeep Choudhury)
@@ -8,7 +8,7 @@ Author-email: ahensinitiative@gmail.com
 Maintainer: Manmay Chakraborty
 Maintainer-email: manmaychakarborty@gmail.com
 License: MIT
-Keywords: python,arithmetic,tools,arith-tools,arithmetic operations,Math,python3,pip,pip3,fibonacci,armstrong,boiled-egg
+Keywords: python,arithmetic,tools,arith-tools,arithmetic operations,Math,python3,pip,pip3,fibonacci,armstrong,boiled-egg,terrace,unique,amicable
 Platform: UNKNOWN
 Classifier: Development Status :: 5 - Production/Stable
 Classifier: Intended Audience :: Developers
@@ -83,10 +83,14 @@ print(arithtools.reverse(num))
 - Check for Fascinating Number.
 - Check for Keith or repfigit Number.
 - Check for Neon Number.
-- Check for Spy Number .......... and many more.
+- Check for Spy Number .
+- Check for amicable number.
+- Check for Terrace Number.......... and many more.
 (Check out the Project to find more.)
 
+<br>
 
+### NOTE: Run ```help(arithtools)``` in interactive window or terminal to get more info. 
 
 <br><br>
 
