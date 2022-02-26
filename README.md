@@ -60,10 +60,14 @@ print(arithtools.reverse(num))
 - Check for Fascinating Number.
 - Check for Keith or repfigit Number.
 - Check for Neon Number.
-- Check for Spy Number .......... and many more.
+- Check for Spy Number .
+- Check for amicable number.
+- Check for Terrace Number.......... and many more.
 (Check out the Project to find more.)
 
+<br>
 
+### NOTE: Run ```help(arithtools)``` in interactive window or terminal to get more info. 
 
 <br><br>
 
