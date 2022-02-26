@@ -1,4 +1,7 @@
 
+import math
+
+
 def fibonacci_series(range, num1=0, num2=1) -> int:
     """
         Takes <range> from user and default parameter value is 0 and 1 and prints the fibonacci series in order.
@@ -347,95 +350,103 @@ def happy(number) -> bool:
             return True
         else:
             return False
-        
-def unique(n) -> bool:
-    f=0
-    for i in range(0,10):
-        cp=n
-        ct=0
-        while(cp!=0):
-            r=cp%10
-            if(r==i):
-                ct+=1
-            cp=cp//10
-        if(ct>1):
-            return False
-            f=1
-            break
-    if(f==0):
-        return True
 
+
+def unique(n) -> bool:
+    """Checks whether the given number is Unique or not..."""
+    if(n == 0):
+        return False
+    f = 0
+    for i in range(0, 10):
+        cp = n
+        ct = 0
+        while(cp != 0):
+            r = cp % 10
+            if(r == i):
+                ct += 1
+            cp = cp//10
+        if(ct > 1):
+            f = 1
+            return False
+    if(f == 0):
+        return True
 
 
 def strong(n) -> bool:
-    sum=0
-    temp=n
+    """Checks whether the given number is Strong Number or not."""
+    sum = 0
+    temp = n
     while(n):
-        i=1
-        f=1
-        r=n%10
-        while(i<=r):
-            f=f*i
-            i=i+1
-        sum=sum+f
-        n=n//10
-    if(sum==temp):
+        i = 1
+        f = 1
+        r = n % 10
+        while(i <= r):
+            f = f*i
+            i = i+1
+        sum = sum+f
+        n = n//10
+    if(sum == temp):
         return True
     else:
         return False
 
 
-
-def amicable(x,y) -> bool:
-    s1=0
-    s2=0
-    for i in range(1,x):
-        if(x%i==0):
-            s1+=i
-    for j in range(1,y):
-        if(y%j==0):
-            s2+=y
-    if(s1==y and s2==x):
+def amicable(userInput1, userInput2) -> bool:
+    """Checks whether the given pair of numbers is amicable or not..."""
+    s1 = 0
+    s2 = 0
+    for i in range(1, userInput1):
+        if(userInput1 % i == 0):
+            s1 += i
+    for j in range(1, userInput2):
+        if(userInput2 % j == 0):
+            s2 += j
+    if(s1 == userInput2 and s2 == userInput1):
         return True
     else:
         return False
 
 
-def Nearest_Prime(n) -> int:
-    a=n
-    m=n
+def Nearest_Prime(n, dist=1) -> int:
+    """Returns the nearest prime of a given input.For certain cases two values could be at near,to find the nearest prime from 0 to that number give ```dist=1``` otherwise ```dist=2```.."""
+    a = n
+    m = n
     while(1):
-        ct=0
-        a=a+1
-        for i in range(1,a+1):
-            if(a%i==0):
-                ct+=1
-        if(ct==2):
+        ct = 0
+        a = a+1
+        for i in range(1, a+1):
+            if(a % i == 0):
+                ct += 1
+        if(ct == 2):
             break
     while(1):
-        ct=0
-        m=m-1
-        for j in range(1,m+1):
-            if(m%j==0):
-                ct+=1
-        if(ct==2):
+        ct = 0
+        m = m-1
+        for j in range(1, m+1):
+            if(m % j == 0):
+                ct += 1
+        if(ct == 2):
             break
-    if((a-n)<(n-m)):
+    if((a-n) < (n-m)):
         return a
-    elif((n-m)<(a-n)):
+    elif((n-m) < (a-n)):
         return m
     else:
-        return a,m
+        if dist == 1:
+            return m
+        elif dist == 2:
+            return a
 
 
 def equilateral_triangle(n):
-    print("The equilateral triangle is as follows")
-    for i in range(1,n+1,2):
-        print(" "*n,"*"*i," "*n)
-        n=n-1
+    """Print a equilateral triangle with * for ```(n+1)//2``` number of rows"""
+    for i in range(1, n+1, 2):
+        print(" "*n, "*"*i, " "*n)
+        n = n-1
 
-import math
-def terrace(userNum1,userNum2) -> bool:
+
+def terrace(userNum1, userNum2) -> bool:
+    """Check whether the input number is Terrace or not..."""
     temp1, temp2 = userNum1, userNum2
     gcd = math.gcd(temp1, temp2)
     li = [2, 3, 5, 7, 11, 13, 17, 19]
@@ -455,7 +466,7 @@ def terrace(userNum1,userNum2) -> bool:
                     if(z in lis2):
                         k += 1
                 if(k == len(lis1)*2):
-                    if(temp1//gcd == temp2//gcd -1 or temp1//gcd == temp2//gcd+1):
+                    if(temp1//gcd == temp2//gcd - 1 or temp1//gcd == temp2//gcd+1):
                         return True
                     else:
                         return False
@@ -463,74 +474,3 @@ def terrace(userNum1,userNum2) -> bool:
             return False
         else:
             i += 1
-
-def Xer_Calculator():
-    print(".....XER CALCULATOR.......\nPLEASE SELECT ANY ONE\n1.  DECIMAL  TO BINARY\n2.  BINARY TO DECIMAL\n3.  DECIMAL TO OCTAL\n4.  OCTAL TO DECIMAL\n5.  OCTAL TO BINARY\n6.  BINARY TO OCTAL\n7.  DECIMAL TO HEXADECIMAL\n8.  HEXADECIMAL TO DECIMAL\n9.  BINARY ADDITION\n10. BINARY SUBSTRACTION\n11.ADDITION\n12.SUBSTRACTION\n13.MULTIPLICATION\n14.DIVISION\n0.")
-    while True:
-        try:
-            choice = int(input("Enter choice: "))
-            if(choice == 1):  # Decimal to Binary
-                userInp = int(input("Enter decimal value: "))
-                print(f"Binary value is: {'-'+(bin(abs(userInp))[2:])  if userInp<0 else bin(userInp)[2:]}")
-
-            if(choice == 2):  # Binary to Decimal
-                userInp = input("Enter Binary value: ")
-                print(f"Decimal value is: {(int(userInp,2))}")
-
-            if(choice == 3):  # Decimal to Octal
-                userInp = int(input("Enter decimal value: "))
-                print(f"Octal value is: {'-'+(oct(abs(userInp))[2:])  if userInp<0 else oct(userInp)[2:]}")
-
-            if(choice == 4):  # Octal to Decimal
-                userInp = input("Enter Octal value: ")
-                print(f"Decimal value is: {(int(userInp,8))}")
-
-            if(choice == 5):  # Octal to Binary
-                userInp = input("Enter Octal value: ")
-                decimal = int(userInp, 8)
-                print(f"Binary value is: {'-'+(bin(abs(decimal))[2:])  if decimal<0 else bin(decimal)[2:]}")
-
-            if(choice == 6):  # Binary to Octal
-                userInp = input("Enter Binary value: ")
-                decimal = int(userInp, 2)
-                print(f"Octal value is: {'-'+(oct(abs(decimal))[2:])  if decimal<0 else oct(decimal)[2:]}")
-
-            if(choice == 7):  # Decimal to hexadecimal
-                userInp = int(input("Enter Decimal value: "))
-                print(f"Hexadecimal value is: {('-'+(hex(abs(userInp))[2:])  if userInp<0 else hex(userInp)[2:]).upper()}")
-
-            if(choice == 8):  # Hexadecimal to Decimal
-                userInp = input("Enter Hexadecimal Value: ")
-                print(f"Decimal value is: {int(userInp,16)}")
-
-            if(choice == 9):  # Binary Addition
-                print(bin(int(input("Enter binary input 1: "), 2) +int(input("Enter binary input 2: "), 2))[2:])
-
-            if(choice == 10):  # Binary Substraction
-                print(bin(int(input("Enter binary input 1: "), 2) -int(input("Enter binary input 2: "), 2)).replace('0b', ''))
-            if(choice==11):   # Addition
-                userInp1=float(input("Enter the first number"))
-                userInp2=float(input("Enter the second number"))
-                print("Addition of two numbers is",userInp1+userInp2)
-            if(choice==12):   # Substraction
-                userInp1=float(input("Enter the first number"))
-                userInp2=float(input("Enter the second number"))
-                print("Substraction of two numbers is",userInp1-userInp2)
-            if(choice==13):   # Multiplication
-                userInp1=float(input("Enter the first number"))
-                userInp2=float(input("Enter the second number"))
-                print("Multiplication of two numbers is",userInp1*userInp2)
-            if(choice==14):   # Division
-                userInp1=float(input("Enter the first number"))
-                userInp2=float(input("Enter the second number"))
-                print("Division of two numbers is",userInp1/userInp2)
-            if(choice == 0):
-                break
-        except:
-            print("Ooooops!!!...GOT an ERROR...TRY AGAIN")
-
-
-
-
-
-
